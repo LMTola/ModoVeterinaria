@@ -44,12 +44,8 @@ namespace Presentacion
             this.lblMascota = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.chkGato = new System.Windows.Forms.CheckBox();
-            this.chkPerro = new System.Windows.Forms.CheckBox();
             this.lblEspecie = new System.Windows.Forms.Label();
-            this.chkHamsters = new System.Windows.Forms.CheckBox();
-            this.chkPajaro = new System.Windows.Forms.CheckBox();
-            this.chkPez = new System.Windows.Forms.CheckBox();
+            this.cbMacota = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -61,6 +57,7 @@ namespace Presentacion
             this.btnGuardar.TabIndex = 33;
             this.btnGuardar.Text = "Guardar:";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblNombre
             // 
@@ -81,6 +78,7 @@ namespace Presentacion
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(184, 20);
             this.txtNombre.TabIndex = 24;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblTelefono
             // 
@@ -122,6 +120,7 @@ namespace Presentacion
             this.txtNombreMascota.Name = "txtNombreMascota";
             this.txtNombreMascota.Size = new System.Drawing.Size(184, 20);
             this.txtNombreMascota.TabIndex = 28;
+            this.txtNombreMascota.TextChanged += new System.EventHandler(this.txtNombreMascota_TextChanged);
             // 
             // lblRaza
             // 
@@ -205,30 +204,6 @@ namespace Presentacion
             this.txtDireccion.Size = new System.Drawing.Size(184, 20);
             this.txtDireccion.TabIndex = 40;
             // 
-            // chkGato
-            // 
-            this.chkGato.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkGato.AutoSize = true;
-            this.chkGato.ForeColor = System.Drawing.SystemColors.Control;
-            this.chkGato.Location = new System.Drawing.Point(281, 163);
-            this.chkGato.Name = "chkGato";
-            this.chkGato.Size = new System.Drawing.Size(49, 17);
-            this.chkGato.TabIndex = 41;
-            this.chkGato.Text = "Gato";
-            this.chkGato.UseVisualStyleBackColor = true;
-            // 
-            // chkPerro
-            // 
-            this.chkPerro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkPerro.AutoSize = true;
-            this.chkPerro.ForeColor = System.Drawing.SystemColors.Control;
-            this.chkPerro.Location = new System.Drawing.Point(337, 163);
-            this.chkPerro.Name = "chkPerro";
-            this.chkPerro.Size = new System.Drawing.Size(51, 17);
-            this.chkPerro.TabIndex = 42;
-            this.chkPerro.Text = "Perro";
-            this.chkPerro.UseVisualStyleBackColor = true;
-            // 
             // lblEspecie
             // 
             this.lblEspecie.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -240,42 +215,21 @@ namespace Presentacion
             this.lblEspecie.TabIndex = 43;
             this.lblEspecie.Text = "Especie:";
             // 
-            // chkHamsters
+            // cbMacota
             // 
-            this.chkHamsters.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkHamsters.AutoSize = true;
-            this.chkHamsters.ForeColor = System.Drawing.SystemColors.Control;
-            this.chkHamsters.Location = new System.Drawing.Point(394, 163);
-            this.chkHamsters.Name = "chkHamsters";
-            this.chkHamsters.Size = new System.Drawing.Size(70, 17);
-            this.chkHamsters.TabIndex = 44;
-            this.chkHamsters.Text = "Hamsters";
-            this.chkHamsters.UseVisualStyleBackColor = true;
-            this.chkHamsters.CheckedChanged += new System.EventHandler(this.chkHamsters_CheckedChanged);
-            // 
-            // chkPajaro
-            // 
-            this.chkPajaro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkPajaro.AutoSize = true;
-            this.chkPajaro.ForeColor = System.Drawing.SystemColors.Control;
-            this.chkPajaro.Location = new System.Drawing.Point(470, 163);
-            this.chkPajaro.Name = "chkPajaro";
-            this.chkPajaro.Size = new System.Drawing.Size(56, 17);
-            this.chkPajaro.TabIndex = 45;
-            this.chkPajaro.Text = "Pajaro";
-            this.chkPajaro.UseVisualStyleBackColor = true;
-            // 
-            // chkPez
-            // 
-            this.chkPez.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chkPez.AutoSize = true;
-            this.chkPez.ForeColor = System.Drawing.SystemColors.Control;
-            this.chkPez.Location = new System.Drawing.Point(532, 162);
-            this.chkPez.Name = "chkPez";
-            this.chkPez.Size = new System.Drawing.Size(44, 17);
-            this.chkPez.TabIndex = 46;
-            this.chkPez.Text = "Pez";
-            this.chkPez.UseVisualStyleBackColor = true;
+            this.cbMacota.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbMacota.FormattingEnabled = true;
+            this.cbMacota.Items.AddRange(new object[] {
+            "Gato",
+            "Perro",
+            "Hamster",
+            "Pajaro",
+            "Pez"});
+            this.cbMacota.Location = new System.Drawing.Point(359, 137);
+            this.cbMacota.Name = "cbMacota";
+            this.cbMacota.Size = new System.Drawing.Size(184, 21);
+            this.cbMacota.TabIndex = 48;
+            this.cbMacota.SelectedIndexChanged += new System.EventHandler(this.cbMacota_SelectedIndexChanged);
             // 
             // Frmcliente
             // 
@@ -283,12 +237,8 @@ namespace Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(589, 311);
-            this.Controls.Add(this.chkPez);
-            this.Controls.Add(this.chkPajaro);
-            this.Controls.Add(this.chkHamsters);
+            this.Controls.Add(this.cbMacota);
             this.Controls.Add(this.lblEspecie);
-            this.Controls.Add(this.chkPerro);
-            this.Controls.Add(this.chkGato);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblMascota);
@@ -328,11 +278,7 @@ namespace Presentacion
         private System.Windows.Forms.Label lblMascota;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.CheckBox chkGato;
-        private System.Windows.Forms.CheckBox chkPerro;
         private System.Windows.Forms.Label lblEspecie;
-        private System.Windows.Forms.CheckBox chkHamsters;
-        private System.Windows.Forms.CheckBox chkPajaro;
-        private System.Windows.Forms.CheckBox chkPez;
+        private System.Windows.Forms.ComboBox cbMacota;
     }
 }
