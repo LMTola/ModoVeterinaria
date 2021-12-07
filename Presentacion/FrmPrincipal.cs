@@ -50,17 +50,13 @@ namespace Presentacion
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
             openChildForm(new Frmcliente());
-            //..
-            //your codes
-            //..
+
             hideSubMenu();
         }
         private void btnAgendaCliente_Click(object sender, EventArgs e)
         {
             openChildForm(new Agendacliente());
-            //..
-            //your codes
-            //..
+
             hideSubMenu();
         }
         #endregion
@@ -104,25 +100,21 @@ namespace Presentacion
         #region TurnoSubMenu
         private void btnConsultaMedica_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new FrmTurno());
+            //enviar parametro cbTipoServicio_ a pantalla Turno
             hideSubMenu();
         }
 
         private void btnPeluqueria_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+            openChildForm(new FrmTurno());
+
             hideSubMenu();
         }
 
         private void btnBuscarTurno_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+
             hideSubMenu();
         }
 
@@ -154,9 +146,7 @@ namespace Presentacion
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            //..
-            //your codes
-            //..
+
             hideSubMenu();
         }
 

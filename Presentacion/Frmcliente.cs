@@ -15,16 +15,11 @@ namespace Presentacion
     public partial class Frmcliente : Form
     {
 
-        //protected string Nombre;
-        //protected string Apellido;
-        //protected double Telefono;
-        //protected string Direccion;
+
 
         public Frmcliente()
         {
             InitializeComponent();
-            PropietarioMascota cliente = new PropietarioMascota();
-            Mascota mascota = new Mascota();
         }
 
         private void Frmcliente_Load(object sender, EventArgs e)
